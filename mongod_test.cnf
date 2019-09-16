@@ -1,0 +1,27 @@
+# MongoDB 3.6≈‰÷√Œƒº˛
+port            =   27017
+bind_ip_all	=   1
+pidfilepath     =   /data/mongodb/test/data/mongod1.pid
+fork            =   true
+dbpath          =   /data/mongodb/test/data
+logpath         =   /data/mongodb/test/logs/mongod1.log
+logappend       =   true
+logRotate       =   rename
+journal         =   true
+directoryperdb  =   true
+quiet           =   true
+auth            =   true
+keyFile         =   /data/mongodb/test/key/mongodb-keyfile
+profile         =   1
+slowms          =   2000
+
+noIndexBuildRetry = 1
+
+storageEngine   =   wiredTiger
+wiredTigerDirectoryForIndexes = true
+wiredTigerCollectionBlockCompressor = snappy
+wiredTigerJournalCompressor = snappy
+wiredTigerCacheSizeGB = 30 
+
+replSet       =    test_rs1
+oplogSize     =    102400
