@@ -1,4 +1,4 @@
-# MongoDB 3.6ÅäÖÃÎÄ¼ş
+# MongoDB 3.6é…ç½®æ–‡ä»¶
 port            =   27017
 bind_ip_all	=   1
 pidfilepath     =   /data/mongodb/test/data/mongod1.pid
