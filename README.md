@@ -9,6 +9,9 @@ percona-server-mongodb-3.6.13-3.3-centos6-x86_64.tar.gz
 
 三个文件放在同一个目录下，例/root/soft/目录下
 
+先关闭大页
+#/bin/bash disable-transparent-hugepages start
+
 1）三个节点安装mongo并启动mongod进程
 
 #/bin/bash mongo_install.sh install
