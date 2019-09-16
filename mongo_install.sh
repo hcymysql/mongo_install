@@ -64,7 +64,7 @@ sed "s/test/$dbname/;s/27017/$dbport/;s/test_rs1/$replSet/;/wiredTigerCacheSizeG
 	ps aux | grep 'mongodb' | grep -v 'grep' | grep -v 'bash'
 	if [ $? -eq 0 ]
 	then
-        echo "MongoDB安装完毕。"
+        	echo "MongoDB安装完毕。"
 	else
 		echo "MongoDB安装失败。"
 	fi
@@ -92,7 +92,7 @@ rs.initiate(config_rs)
 EOF
 
 sleep 2
-###创建同步账号和管理员账号
+###创建超级管理员账号
 /usr/local/mongodb/bin/mongo localhost:$dbport/admin --quiet --eval 'db.createUser({user:"admin",pwd:"hechunyang",roles:[{role:"root",db:"admin"}]})'
 
 echo "MongoDB副本集和账号初始化完毕。"
