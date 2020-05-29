@@ -53,7 +53,6 @@ fi
 sed "s/test/$dbname/;s/27017/$dbport/;s/test_rs1/$replSet/;/wiredTigerCacheSizeGB/s/30/$wiredTigerCacheSizeGB/" mongod_test.cnf > /etc/mongod_$dbname.cnf
 
     	mkdir -p /data/mongodb/$dbname/{data,logs,key}
-	chmod 600 /data/mongodb/$dbname/key/mongodb-keyfile
 	echo -e "my secret key" > /data/mongodb/$dbname/key/mongodb-keyfile
     	chmod 600 /data/mongodb/$dbname/key/mongodb-keyfile  
 	chown -R mongodb.mongodb /data/mongodb/
