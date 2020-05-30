@@ -1,6 +1,8 @@
 # MongoDB 3.6副本集安装配置脚本
 #!/bin/bash
 
+### 修改下面的变量值 ###
+#####################################################
 mongodb_version=percona-server-mongodb-3.6.14-3.4-centos6-x86_64.tar.gz
 mongodb_version_dir=percona-server-mongodb-3.6.14-3.4
 dbport=27017
@@ -8,14 +10,15 @@ replSet=test_rs1
 dbname=test1
 wiredTigerCacheSizeGB=1
 
-primary=10.10.159.31
-secondary1=10.10.159.31
-secondary2=10.10.159.31
+primary=192.168.0.1
+secondary1=192.168.0.2
+secondary2=192.168.0.3
 
 dns1=test1.mongodb.dc.hechunyang.com
 dns2=test2.mongodb.dc.hechunyang.com
 dns3=test3.mongodb.dc.hechunyang.com
 
+###以下不用改###
 #####################################################
 
 if [ "$1" = "install" ]
@@ -67,7 +70,7 @@ sed "s/test/$dbname/;s/27017/$dbport/;s/test_rs1/$replSet/;/wiredTigerCacheSizeG
 	ps aux | grep 'mongodb' | grep -v 'grep' | grep -v 'bash'
 	if [ $? -eq 0 ]
 	then
-        	echo "MongoDB安装完毕。"
+        		echo "MongoDB安装完毕。"
 	else
 		echo "MongoDB安装失败。"
 	fi
