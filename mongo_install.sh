@@ -6,9 +6,9 @@
 mongodb_version=percona-server-mongodb-3.6.14-3.4-centos6-x86_64.tar.gz
 mongodb_version_dir=percona-server-mongodb-3.6.14-3.4
 dbport=27017
-replSet=test_rs1
+replSet=test_rs1 #副本集名字
 dbname=test1
-wiredTigerCacheSizeGB=1
+wiredTigerCacheSizeGB=1 #物理内存70%
 
 primary=192.168.0.1
 secondary1=192.168.0.2
