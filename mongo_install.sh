@@ -1,12 +1,17 @@
 # MongoDB 3.6副本集安装配置脚本
 #!/bin/bash
 
-mongodb_version=percona-server-mongodb-3.6.13-3.3-centos6-x86_64.tar.gz
-mongodb_version_dir=percona-server-mongodb-3.6.13-3.3
+mongodb_version=percona-server-mongodb-3.6.14-3.4-centos6-x86_64.tar.gz
+mongodb_version_dir=percona-server-mongodb-3.6.14-3.4
 dbport=27017
 replSet=test_rs1
-dbname=test
-wiredTigerCacheSizeGB=50
+dbname=test1
+wiredTigerCacheSizeGB=1
+
+primary=10.10.159.31
+secondary1=10.10.159.31
+secondary2=10.10.159.31
+
 dns1=test1.mongodb.dc.hechunyang.com
 dns2=test2.mongodb.dc.hechunyang.com
 dns3=test3.mongodb.dc.hechunyang.com
@@ -18,16 +23,15 @@ then
 
 cat << EOF >> /etc/hosts
 
-192.168.196.123      test1.mongodb.dc.hechunyang.com
-192.168.196.124      test2.mongodb.dc.hechunyang.com
-192.168.196.125      test3.mongodb.dc.hechunyang.com
+$primary	$dns1
+$secondary1	$dns2
+$secondary2	$dns3
 
 EOF
 
 echo "正在安装MongoDB软件......."
 
 useradd mongodb
-useradd nagios
 
 sleep 2
 
