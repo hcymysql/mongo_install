@@ -70,7 +70,7 @@ sed "s/test/$dbname/;s/27017/$dbport/;s/test_rs1/$replSet/;/wiredTigerCacheSizeG
 	ps aux | grep 'mongodb' | grep -v 'grep' | grep -v 'bash'
 	if [ $? -eq 0 ]
 	then
-        		echo "MongoDB安装完毕。"
+        	echo "MongoDB安装完毕。"
 	else
 		echo "MongoDB安装失败。"
 	fi
@@ -109,6 +109,7 @@ fi
 if [ "$1" = "reset" ]
 then
         pkill -9 mongo
+	sleep 2
         rm -rf /data/mongodb/$dbname  ##想好了再干
         exit
 fi
