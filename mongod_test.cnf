@@ -15,7 +15,9 @@ keyFile         =   /data/mongodb/test/key/mongodb-keyfile
 profile         =   1
 slowms          =   2000
 
-noIndexBuildRetry = 1
+noIndexBuildRetry = 1 
+# 使用MongoDB时，如何停止失控的索引创建过程？
+# https://www.jianshu.com/p/f9d71763e844
 
 storageEngine   =   wiredTiger
 wiredTigerDirectoryForIndexes = true
